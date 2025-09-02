@@ -8,8 +8,8 @@ import { Button } from "@/components/ui/button"
 import { getConsultationPrice, type ConsultationType } from "@/lib/pricing"
 import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
-import { easeOut, easeInOut } from "framer-motion";
 import { cubicBezier } from "framer-motion";
+import { easeOut, easeInOut } from "framer-motion";
 
 
 type DoctorLite = {
@@ -48,7 +48,7 @@ export function AppointmentModal({ open, onOpenChange, doctor }: AppointmentModa
     onOpenChange(false)
   }
 
-  const container = {
+ const container = {
   hidden: { opacity: 0, scale: 0.98 },
   visible: {
     opacity: 1,

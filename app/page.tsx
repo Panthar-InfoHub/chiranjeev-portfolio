@@ -17,15 +17,13 @@ import Preloader from "@/components/preloader"
 import MobileBottomNav from "@/components/mobile-bottom-nav"
 
 export default function Page() {
-  const [showContent, setShowContent] = useState(false)
+  const [showContent, setShowContent] = useState(true)
 
-  const handlePreloaderComplete = () => {
-    setTimeout(() => setShowContent(true), 200)
-  }
+
 
   return (
     <main>
-      <Preloader onComplete={handlePreloaderComplete} />
+
       <div
         className={`transition-all duration-700 ${showContent ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
       >
@@ -37,14 +35,11 @@ export default function Page() {
           <Reveal y={24} delay={0.1}>
             <Hero />
           </Reveal>
-          <Reveal delay={0.2}>
-            <WhyChooseUs />
+          <Reveal delay={0.4}>
+            <Doctors />
           </Reveal>
           <Reveal delay={0.3}>
             <DepartmentsGrid />
-          </Reveal>
-          <Reveal delay={0.4}>
-            <Doctors />
           </Reveal>
           <Reveal delay={0.5}>
             <section id="testimonials" className="mx-auto max-w-7xl px-4 py-16">
@@ -64,6 +59,9 @@ export default function Page() {
           </Reveal>
           <Reveal delay={0.7}>
             <NewsUpdates />
+          </Reveal>
+          <Reveal delay={0.2}>
+            <WhyChooseUs />
           </Reveal>
           <Reveal delay={0.8} y={20}>
             <AppointmentCard />

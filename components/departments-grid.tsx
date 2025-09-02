@@ -4,6 +4,7 @@ import { SectionTitle } from "./section-title"
 import { TESTS } from "@/lib/data"
 import { motion } from "framer-motion"
 import TestAppointmentButton from "./test-appointment-button"
+import Link from "next/link"
 
 export default function DepartmentsGrid() {
   return (
@@ -34,7 +35,13 @@ export default function DepartmentsGrid() {
               />
             </div>
             <h3 className="mb-4 text-center text-xl font-extrabold text-zinc-900">{test.name}</h3>
-            <div className="flex justify-center">
+            <div className="flex flex-col gap-2">
+              <Link
+                href={`/tests/${test.slug}`}
+                className="w-full rounded-lg border border-amber-600 bg-white px-4 py-2 text-center text-sm font-medium text-amber-600 transition hover:bg-amber-50"
+              >
+                View More
+              </Link>
               <TestAppointmentButton testSlug={test.slug} testTitle={test.name} className="w-full text-sm" />
             </div>
           </motion.article>

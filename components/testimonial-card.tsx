@@ -7,16 +7,27 @@ type Props = { item: Testimonial }
 
 export function TestimonialCard({ item }: Props) {
   const placeholder = "/patient-story-banner-with-doctors.png"
+
   return (
     <article className="w-72 sm:w-80 lg:w-96 shrink-0 rounded-2xl border border-stone-200 bg-white shadow-sm overflow-hidden">
       <div className="relative h-44 w-full">
-        <Image
-          src={item.image || placeholder}
-          alt={`${item.title} thumbnail`}
-          fill
-          className="object-cover"
-          sizes="(max-width: 640px) 288px, (max-width: 1024px) 320px, 384px"
-        />
+        {item.youtubeId ? (
+          <iframe
+            src={`https://www.youtube.com/embed/${item.youtubeId}?rel=0&modestbranding=1`}
+            title={`${item.title} testimonial video`}
+            className="h-full w-full"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        ) : (
+          <Image
+            src={item.image || placeholder}
+            alt={`${item.title} thumbnail`}
+            fill
+            className="object-cover"
+            sizes="(max-width: 640px) 288px, (max-width: 1024px) 320px, 384px"
+          />
+        )}
       </div>
 
       <div className="p-4 sm:p-5">
