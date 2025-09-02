@@ -118,7 +118,7 @@ export default function Header() {
       <header className="sticky top-0 z-40 w-full border-b border-stone-200 bg-white/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <Link href="#" className="flex items-center gap-2" aria-label="Dotus home">
-            <span className="text-2xl font-extrabold text-amber-700">Dotus.</span>
+            <span className="text-2xl font-extrabold text-amber-700">Chiranjeev Hospital</span>
           </Link>
 
           <nav className="flex items-center gap-6" aria-label="primary">

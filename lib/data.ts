@@ -61,6 +61,16 @@ export const DOCTORS = [
     role: "Cancer Specialist",
     imgQuery: "portrait oncologist headshot neutral background",
   },
+  {
+    name: "Gagandeep Singh",
+    role: "fullstack developer",
+    imgQuery: "portrait oncologist headshot neutral background",
+  },
+  {
+    name: "Dr. Pulkit Shukla",
+    role: "fullstack developer",
+    imgQuery: "portrait oncologist headshot neutral background",
+  },
 ]
 
 export type Testimonial = {
@@ -182,9 +192,9 @@ export const POSTS = [
 ]
 
 export const FOOTER = {
-  brand: "Dotus",
+  brand: "Chiranjeev Hospital",
   blurb:
-    "If you're looking for a medical theme there are several popular and important medical themes that you could consider. Dotus is number #1 theme.",
+    "If you need a healthcare solution that puts patients first, look no further than Dotus. Our team of experienced medical professionals is dedicated to providing personalized care and support to help you achieve your health goals.",
   links: [
     { label: "About Us", href: "#" },
     { label: "Services", href: "#why" },
@@ -192,7 +202,7 @@ export const FOOTER = {
     { label: "Contact", href: "#footer" },
     { label: "Latest News", href: "#blog" },
   ],
-  address: ["7 Green Lake Street", "Crawfordsville, IN 47933", "+1 800 123 456 789", "contact@dotus.com"],
+  address: ["near Bundelkhand University, Shivaji Nagar, Jhansi, Uttar Pradesh 284128"],
 }
 
 export const NEWS_UPDATES = [

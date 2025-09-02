@@ -57,7 +57,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-stone-200 py-4 text-center text-sm text-zinc-900/80">
-        © Copyright 2025 | Dotus – Medical Theme | All rights reserved.
+        © Copyright 2025 | Designed and Developed By Panthar InfoHub | All rights reserved.
       </div>
     </footer>
   )

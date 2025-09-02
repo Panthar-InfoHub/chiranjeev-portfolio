@@ -8,6 +8,7 @@ import { slugify } from "@/lib/slug"
 import BookAppointmentButton from "./book-appointment-button"
 import { motion } from "framer-motion"
 import { cubicBezier } from "framer-motion";
+import { doctorsData } from "@/lib/doctors"
 
 export default function Doctors() {
   const container = {
@@ -39,7 +40,7 @@ export default function Doctors() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        {DOCTORS.map((d) => (
+        {doctorsData.map((d: any) => (
           <motion.article
             key={d.name}
             variants={item}
@@ -47,7 +48,7 @@ export default function Doctors() {
           >
             <div className="aspect-[4/3]">
               <img
-                src={`/abstract-geometric-shapes.png?height=600&width=800&query=${encodeURIComponent(d.imgQuery)}`}
+                src={d.imgQuery}
                 alt={`${d.name} placeholder`}
                 className="h-full w-full object-cover"
               />
@@ -64,7 +65,7 @@ export default function Doctors() {
                   className="sm:w-auto"
                 />
                 <Link
-                  href={`/doctors/${slugify(d.name)}`}
+                  href={`/doctors/${d.slug}`}
                   className="inline-flex items-center justify-center rounded-md border border-stone-300 bg-white px-4 py-2 text-sm font-semibold text-stone-900 hover:bg-stone-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-700/40"
                 >
                   View More

@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { DOCTORS } from "@/lib/data"
 import { slugify } from "@/lib/slug"
+import { doctorsData } from "@/lib/doctors"
 
 type PageProps = { params: { slug: string } }
 
@@ -12,22 +13,24 @@ export function generateStaticParams() {
   }
 }
 
-export default function DoctorDetailPage({ params }: PageProps) {
-  const { slug } = params
-
+export default async function DoctorDetailPage({ params }: PageProps) {
+  const { slug } = await params 
+  console .log(slug)
   const doc =
-    DOCTORS.find((d) => slugify(d.name) === slug) ||
+    doctorsData.find((d) => d.slug === slug) ||
     ({
       name: `Dr. ${slug.replace(/-/g, " ")}`,
       role: "General Medicine",
       imgQuery: "doctor portrait on neutral background",
-      experience: 8,
+      experience: 10,
+      about : "Experienced medical professional dedicated to patient care and well-being.",
     } as any)
 
   const name = doc.name || `Dr. ${slug.replace(/-/g, " ")}`
   const department = doc.role || "General Medicine"
-  const experienceYears = typeof doc.experience === "number" ? doc.experience : 8
+  const experienceYears = typeof doc.experienceYears === "number" ? doc.experienceYears : 8
   const imgQuery = doc.imgQuery || "doctor portrait on neutral background"
+  const about = doc.about || "Experienced medical professional dedicated to patient care and well-being."
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-10 md:py-14">
@@ -62,7 +65,7 @@ export default function DoctorDetailPage({ params }: PageProps) {
           <h2 className="mb-3 text-xl font-semibold text-stone-900">About the Doctor</h2>
           <p className="text-stone-700 leading-relaxed">
             {
-              "Add a short professional bio here. Include qualifications, specialties, approach to care, awards, and any "
+              doc.about
             }
             {"patient care philosophy details. Replace this placeholder text with real content later."}
           </p>

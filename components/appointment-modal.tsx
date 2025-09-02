@@ -103,7 +103,7 @@ export function AppointmentModal({ open, onOpenChange, doctor }: AppointmentModa
 
               <motion.div className="space-y-1.5 md:col-span-2" variants={item}>
                 <Label htmlFor="mobile">Mobile Number</Label>
-                <Input id="mobile" name="mobile" type="tel" placeholder="e.g., +1 555 000 0000" required />
+                <Input id="mobile" name="mobile" type="tel" placeholder="e.g.,` +91 8827190251`" required />
               </motion.div>
 
               <motion.div className="space-y-1.5" variants={item}>
@@ -125,8 +125,6 @@ export function AppointmentModal({ open, onOpenChange, doctor }: AppointmentModa
                   <SelectContent>
                     <SelectItem value="male">Male</SelectItem>
                     <SelectItem value="female">Female</SelectItem>
-                    <SelectItem value="other">Other</SelectItem>
-                    <SelectItem value="prefer-not-to-say">Prefer not to say</SelectItem>
                   </SelectContent>
                 </Select>
                 <input type="hidden" name="gender" value={gender} />
@@ -157,7 +155,7 @@ export function AppointmentModal({ open, onOpenChange, doctor }: AppointmentModa
                 Department: <span className="font-medium text-stone-900">{doctor?.department || "General"}</span>
               </p>
               <Button type="submit" className={cn("bg-amber-700 hover:bg-amber-800 text-white")}>
-                {`Pay Now — $${price}`}
+                {`Pay Now — Rs.${price}`}
               </Button>
             </motion.div>
           </form>

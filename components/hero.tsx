@@ -68,7 +68,7 @@ export default function Hero() {
         >
           <div className="aspect-square overflow-hidden rounded-full border border-stone-200 shadow-sm">
             <img
-              src={"/placeholder.svg?height=800&width=800&query=smiling%20doctor%20portrait%20in%20clinic"}
+              src={"https://images.jdmagicbox.com/v2/comp/jhansi/dc/9999px510.x510.1227522689r9t8u1.dc/catalogue/a-unit-of-chiranjeev-multi-speciality-hospital-pvt-ltd-shivaji-nagar-jhansi-hospitals-pjdiuml78k.jpg"}
               alt={HERO.imgAlt}
               className="h-full w-full object-cover"
             />

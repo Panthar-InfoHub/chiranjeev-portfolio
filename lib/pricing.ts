@@ -7,9 +7,13 @@ type DoctorPricing = {
 
 // Keys should match doctor slugs, e.g. from slugify(name)
 const PRICING: Record<string, DoctorPricing> = {
-  "dr-raquel-riley": { physical: 120, video: 85 },
-  "dr-allison-katrina": { physical: 140, video: 95 },
-  "dr-belinda-walters": { physical: 160, video: 110 },
+  "jitendra-kumar-pal": { physical: 130, video: 90 },
+  "ruby-gupta": { physical: 130, video: 90 },
+  "abhay-gupta": { physical: 130, video: 90 },
+  "Stayendra-rajpoot": { physical: 130, video: 90 },
+  "deepak-singh": { physical: 130, video: 90 },
+  "sanjay-tripathi": { physical: 130, video: 90 },
+  "apoorva-tripathi": { physical: 130, video: 90 },
 }
 
 const DEFAULT_PRICING: DoctorPricing = { physical: 130, video: 90 }

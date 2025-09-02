@@ -70,7 +70,7 @@ export default function TestAppointmentModal({ open, onClose, testSlug, testTitl
                   <input
                     inputMode="tel"
                     className="h-10 rounded-md border border-stone-300 px-3 outline-none focus:border-amber-700"
-                    placeholder="e.g. +1 555 123 4567"
+                    placeholder="e.g.  +91 8827190251"
                   />
                 </label>
                 <label className="flex flex-col gap-1">
@@ -79,8 +79,6 @@ export default function TestAppointmentModal({ open, onClose, testSlug, testTitl
                     <option value="">Select</option>
                     <option>Female</option>
                     <option>Male</option>
-                    <option>Non-binary</option>
-                    <option>Prefer not to say</option>
                   </select>
                 </label>
               </div>
@@ -101,30 +99,15 @@ export default function TestAppointmentModal({ open, onClose, testSlug, testTitl
                   />
                 </label>
               </div>
-
-              <div className="rounded-lg border border-stone-200 bg-amber-50/40 p-3">
-                <p className="text-sm text-stone-700">Payment Option</p>
-                <div className="mt-2 flex flex-wrap items-center gap-2">
-                  <label className="inline-flex items-center gap-2 rounded-md border border-stone-200 bg-white px-3 py-2 text-sm">
-                    <input type="radio" name="payment" defaultChecked className="accent-amber-700" />
-                    Pay Online
-                  </label>
-                  <label className="inline-flex items-center gap-2 rounded-md border border-stone-200 bg-white px-3 py-2 text-sm">
-                    <input type="radio" name="payment" className="accent-amber-700" />
-                    Pay at Center
-                  </label>
-                </div>
-              </div>
-
               <div className="flex items-center justify-between gap-4 pt-1">
                 <p className="text-stone-700">
-                  Total: <span className="font-semibold text-amber-800">${price}</span>
+                  Total: <span className="font-semibold text-amber-800">Rs.{price}</span>
                 </p>
                 <button
                   type="button"
                   className="inline-flex h-10 items-center justify-center rounded-md bg-amber-700 px-4 text-white hover:bg-amber-800"
                 >
-                  Pay Now — ${price}
+                  Pay Now — Rs.{price}
                 </button>
               </div>
             </form>
