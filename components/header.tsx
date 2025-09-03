@@ -7,10 +7,12 @@ import { useIsMobile } from "@/hooks/use-mobile"
 import { Search, X, User, Stethoscope } from "lucide-react"
 import { useState, useEffect } from "react"
 import { createPortal } from "react-dom"
+import BookingModal from "./bookingModal"
 
 export default function Header() {
   const isMobile = useIsMobile()
   const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -104,9 +106,7 @@ export default function Header() {
                   </Link>
                 ))}
               </div>
-            </div>
-
-           
+            </div>        
           </div>
         </div>
       </div>
@@ -137,12 +137,15 @@ export default function Header() {
             >
               <Search size={20} />
             </button>
-            <Button className="bg-amber-700 text-white hover:bg-amber-800">Book Now</Button>
+            <Button className="bg-amber-700 text-white hover:bg-amber-800" onClick={() => setIsBookingModalOpen(true)}>
+              Book Now
+            </Button>
           </div>
         </div>
       </header>
 
       {isSearchOpen && mounted && createPortal(<SearchModal />, document.body)}
+      <BookingModal isOpen={isBookingModalOpen} onClose={() => setIsBookingModalOpen(false)} />
     </>
   )
 }

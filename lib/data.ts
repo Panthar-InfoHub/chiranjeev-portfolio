@@ -15,7 +15,7 @@ export const HERO = {
     "Always available for emergency service.",
     "Low visit and even less with insurance.",
   ],
-  cta: "Explore More",
+  cta: "Book an Appointment",
   // placeholder image description to swap later
   imgAlt: "Doctor portrait placeholder",
   imgQuery: "smiling woman doctor in clinic portrait",

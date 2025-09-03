@@ -4,8 +4,11 @@ import { CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { HERO } from "@/lib/data"
 import { motion } from "framer-motion"
+import { useState } from "react"
+import BookingModal from "./bookingModal"
 
 export default function Hero() {
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false)
   return (
     <section className="relative mx-auto max-w-6xl px-4 pb-16 pt-10">
       {/* Badge */}
@@ -50,11 +53,11 @@ export default function Hero() {
 
           <div className="mt-8">
             <Button
-              className="bg-amber-700 text-white hover:bg-amber-800"
-              onClick={() => document.getElementById("testimonials")?.scrollIntoView({ behavior: "smooth" })}
-            >
-              {HERO.cta}
-            </Button>
+                className="bg-amber-700 text-white hover:bg-amber-800"
+                onClick={() => setIsBookingModalOpen(true)}
+              >
+                {HERO.cta}
+              </Button>
           </div>
         </div>
 
@@ -75,6 +78,8 @@ export default function Hero() {
           </div>
         </motion.div>
       </div>
+      {/* BookingModal component */}
+      <BookingModal isOpen={isBookingModalOpen} onClose={() => setIsBookingModalOpen(false)} />
     </section>
   )
 }
