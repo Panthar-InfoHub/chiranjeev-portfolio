@@ -21,17 +21,17 @@ export default function DepartmentsGrid() {
         viewport={{ once: true, amount: 0.2 }}
         variants={{ hidden: {}, show: { transition: { staggerChildren: 0.06 } } }}
       >
-        {TESTS.map((test) => (
+        {TESTS.slice(0, 4).map((test) => (
           <motion.article
             key={test.slug}
             variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0, transition: { duration: 0.28 } } }}
             className="rounded-xl border border-stone-200 bg-white p-6 shadow-sm transition hover:shadow hover:ring-1 hover:ring-amber-200"
           >
-            <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full border border-stone-200 bg-white">
+            <div className="mx-auto mb-4 overflow-hidden flex h-24 w-24 items-center justify-center rounded-full border border-stone-200 bg-white">
               <img
-                src={`/abstract-geometric-shapes.png?key=6b1lq&height=96&width=96&query=${encodeURIComponent(test.iconQuery)}`}
+                src={test.iconQuery}
                 alt={`${test.name} icon placeholder`}
-                className="h-16 w-16 object-contain"
+                className="h-full w-full object-cover"
               />
             </div>
             <h3 className="mb-4 text-center text-xl font-extrabold text-zinc-900">{test.name}</h3>
@@ -47,6 +47,15 @@ export default function DepartmentsGrid() {
           </motion.article>
         ))}
       </motion.div>
+
+      <div className="mt-8 text-center">
+        <Link
+          href="/tests"
+          className="inline-flex items-center rounded-lg bg-amber-600 px-6 py-3 text-white font-medium transition hover:bg-amber-700"
+        >
+          View More Tests
+        </Link>
+      </div>
     </section>
   )
 }

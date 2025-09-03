@@ -8,12 +8,16 @@ export type DoctorRecord = {
   about : string
   role : string
   imgQuery : string
+  rating?: number
+  location?: string 
+  id?: string
 }
 
 // NOTE: replace placeholders with your real data/images when ready.
 // Keep photos as /placeholder.svg for now (as requested).
 export const doctorsData: DoctorRecord[] = [
   {
+    id: "1",
     slug: "jitendra-kumar-pal",
     name: "Dr. Jitendra kumar pal",
     department: "Restorative Dentistry",
@@ -25,6 +29,7 @@ export const doctorsData: DoctorRecord[] = [
     imgQuery: "https://static.vecteezy.com/system/resources/previews/026/375/249/non_2x/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg",
   },
   {
+    id: "2",
     slug: "ruby-gupta",
     name: "Dr. Ruby Gupta",
     department: "Pathologist",
@@ -36,6 +41,7 @@ export const doctorsData: DoctorRecord[] = [
     imgQuery: "https://static.vecteezy.com/system/resources/previews/035/925/542/large_2x/ai-generated-a-woman-in-a-doctor-s-coat-and-glasses-photo.jpg",
   },
   {
+    id: "3",
     slug: "abhay-gupta",
     name: "Dr. Abhay Gupta",
     department: "Oncology",
@@ -47,6 +53,7 @@ export const doctorsData: DoctorRecord[] = [
     imgQuery: "https://static.vecteezy.com/system/resources/previews/026/375/249/non_2x/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg",
   },
   {
+    id: "4",
     slug: "Stayendra-rajpoot",
     name: "Dr. Satyendra Rajpoot",
     department: "Laparoscopic & Laser Surgery",
@@ -59,6 +66,7 @@ export const doctorsData: DoctorRecord[] = [
   },
 
   {
+    id: "5",
     slug: "deepak-singh",
     name: "Dr. Deepak Singh",
     department: "Neonatologist & Pediatrician",
@@ -71,6 +79,7 @@ export const doctorsData: DoctorRecord[] = [
   },
   
   {
+    id: "6",
     slug: "sanjay-tripathi",
     name: "Dr. Sanjay Tripathi",
     department: "joint replacement surgeon , Traumatologist & arthoscopic surgeon",
@@ -82,8 +91,33 @@ export const doctorsData: DoctorRecord[] = [
     imgQuery: "https://static.vecteezy.com/system/resources/previews/026/375/249/non_2x/ai-generative-portrait-of-confident-male-doctor-in-white-coat-and-stethoscope-standing-with-arms-crossed-and-looking-at-camera-photo.jpg",
   },
   {
+    id: "7",
     slug: "apoorva-tripathi",
     name: "Dr. Apoorva Tripathi",
+    department: "joint replacement surgeon , Traumatologist & arthoscopic surgeon",
+    experienceYears: 18,
+    photo: "/doctor-portrait-3.png",
+    bio: "Dr. Belinda Walters provides oncology care with a multidisciplinary mindset. She collaborates closely with patients and families through every stage of treatment.",
+    about : "Dr. Gagandeep Singh is a leading oncologist with over 18 years of experience in cancer treatment and research. He is dedicated to providing personalized care and innovative therapies to his patients.",
+    role: "Radio Diagnosis",
+    imgQuery: "https://static.vecteezy.com/system/resources/previews/035/925/542/large_2x/ai-generated-a-woman-in-a-doctor-s-coat-and-glasses-photo.jpg",
+  },
+  {
+    id: "8",
+    slug: "vanshika-saxena",
+    name: "Dr. vanshika Saxena",
+    department: "joint replacement surgeon , Traumatologist & arthoscopic surgeon",
+    experienceYears: 18,
+    photo: "/doctor-portrait-3.png",
+    bio: "Dr. Belinda Walters provides oncology care with a multidisciplinary mindset. She collaborates closely with patients and families through every stage of treatment.",
+    about : "Dr. Gagandeep Singh is a leading oncologist with over 18 years of experience in cancer treatment and research. He is dedicated to providing personalized care and innovative therapies to his patients.",
+    role: "Radio Diagnosis",
+    imgQuery: "https://static.vecteezy.com/system/resources/previews/035/925/542/large_2x/ai-generated-a-woman-in-a-doctor-s-coat-and-glasses-photo.jpg",
+  },
+  {
+    id: "9",
+    slug: "rashi-rai",
+    name: "Dr. Rashi Rai",
     department: "joint replacement surgeon , Traumatologist & arthoscopic surgeon",
     experienceYears: 18,
     photo: "/doctor-portrait-3.png",

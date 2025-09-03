@@ -31,18 +31,19 @@ export const FEATURES = [
 ]
 
 export const TESTS = [
-  { name: "Blood Work", slug: "blood-work", iconQuery: "blood test vial medical icon" },
-  { name: "X-Ray", slug: "x-ray", iconQuery: "x-ray chest scan medical icon" },
-  { name: "CT Scan", slug: "ct-scan", iconQuery: "ct scan machine medical icon" },
-  { name: "MRI Scan", slug: "mri-scan", iconQuery: "mri scanner medical equipment icon" },
-  { name: "Ultrasound", slug: "ultrasound", iconQuery: "ultrasound probe medical icon" },
-  { name: "PET Scan", slug: "pet-scan", iconQuery: "pet scan medical imaging icon" },
-  { name: "Urine Test", slug: "urine-test", iconQuery: "urine sample test medical icon" },
-  { name: "ECG", slug: "ecg", iconQuery: "ecg heart monitor medical icon" },
-  { name: "Thyroid Function Test", slug: "thyroid-function-test", iconQuery: "thyroid gland medical test icon" },
-  { name: "Diabetes Panel", slug: "diabetes-panel", iconQuery: "glucose meter diabetes test icon" },
-  { name: "Lipid Profile", slug: "lipid-profile", iconQuery: "cholesterol test medical icon" },
-  { name: "Liver Function Test", slug: "liver-function-test", iconQuery: "liver organ medical test icon" },
+  { name: "Blood Work", slug: "blood-work", iconQuery: "https://ca-times.brightspotcdn.com/dims4/default/b437d6a/2147483647/strip/true/crop/5400x3602+0+0/resize/1200x800!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fb7%2Fb6%2F7204757c4a53addf3f7f0a3ae90a%2F541874-sd-me-company-test-007.jpg" },
+  { name: "X-Ray", slug: "x-ray", iconQuery: "https://ca-times.brightspotcdn.com/dims4/default/b437d6a/2147483647/strip/true/crop/5400x3602+0+0/resize/1200x800!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fb7%2Fb6%2F7204757c4a53addf3f7f0a3ae90a%2F541874-sd-me-company-test-007.jpg"},
+  { name: "CT Scan", slug: "ct-scan", iconQuery: "https://ca-times.brightspotcdn.com/dims4/default/b437d6a/2147483647/strip/true/crop/5400x3602+0+0/resize/1200x800!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fb7%2Fb6%2F7204757c4a53addf3f7f0a3ae90a%2F541874-sd-me-company-test-007.jpg" },
+  { name: "MRI Scan", slug: "mri-scan", iconQuery: "https://ca-times.brightspotcdn.com/dims4/default/b437d6a/2147483647/strip/true/crop/5400x3602+0+0/resize/1200x800!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fb7%2Fb6%2F7204757c4a53addf3f7f0a3ae90a%2F541874-sd-me-company-test-007.jpg" },
+  { name: "Ultrasound", slug: "ultrasound", iconQuery: "https://ca-times.brightspotcdn.com/dims4/default/b437d6a/2147483647/strip/true/crop/5400x3602+0+0/resize/1200x800!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fb7%2Fb6%2F7204757c4a53addf3f7f0a3ae90a%2F541874-sd-me-company-test-007.jpg" },
+  { name: "PET Scan", slug: "pet-scan", iconQuery: "https://ca-times.brightspotcdn.com/dims4/default/b437d6a/2147483647/strip/true/crop/5400x3602+0+0/resize/1200x800!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fb7%2Fb6%2F7204757c4a53addf3f7f0a3ae90a%2F541874-sd-me-company-test-007.jpg" },
+  { name: "Urine Test", slug: "urine-test", iconQuery: "https://ca-times.brightspotcdn.com/dims4/default/b437d6a/2147483647/strip/true/crop/5400x3602+0+0/resize/1200x800!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fb7%2Fb6%2F7204757c4a53addf3f7f0a3ae90a%2F541874-sd-me-company-test-007.jpg" },
+  { name: "ECG", slug: "ecg", iconQuery: "https://ca-times.brightspotcdn.com/dims4/default/b437d6a/2147483647/strip/true/crop/5400x3602+0+0/resize/1200x800!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fb7%2Fb6%2F7204757c4a53addf3f7f0a3ae90a%2F541874-sd-me-company-test-007.jpg" },
+  { name: "Thyroid Function Test", slug: "thyroid-function-test", iconQuery: "https://ca-times.brightspotcdn.com/dims4/default/b437d6a/2147483647/strip/true/crop/5400x3602+0+0/resize/1200x800!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fb7%2Fb6%2F7204757c4a53addf3f7f0a3ae90a%2F541874-sd-me-company-test-007.jpg" },
+  { name: "Diabetes Panel", slug: "diabetes-panel", iconQuery: "https://ca-times.brightspotcdn.com/dims4/default/b437d6a/2147483647/strip/true/crop/5400x3602+0+0/resize/1200x800!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fb7%2Fb6%2F7204757c4a53addf3f7f0a3ae90a%2F541874-sd-me-company-test-007.jpg" },
+  { name: "Lipid Profile", slug: "lipid-profile", iconQuery: "https://ca-times.brightspotcdn.com/dims4/default/b437d6a/2147483647/strip/true/crop/5400x3602+0+0/resize/1200x800!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fb7%2Fb6%2F7204757c4a53addf3f7f0a3ae90a%2F541874-sd-me-company-test-007.jpg" },
+  { name: "Liver Function Test", slug: "liver-function-test", iconQuery: "https://ca-times.brightspotcdn.com/dims4/default/b437d6a/2147483647/strip/true/crop/5400x3602+0+0/resize/1200x800!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fb7%2Fb6%2F7204757c4a53addf3f7f0a3ae90a%2F541874-sd-me-company-test-007.jpg" },
+  { name: "test", slug: "test", iconQuery: "https://ca-times.brightspotcdn.com/dims4/default/b437d6a/2147483647/strip/true/crop/5400x3602+0+0/resize/1200x800!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fb7%2Fb6%2F7204757c4a53addf3f7f0a3ae90a%2F541874-sd-me-company-test-007.jpg" },
 ]
 
 export const DOCTORS = [
@@ -198,7 +199,7 @@ export const FOOTER = {
   links: [
     { label: "About Us", href: "#" },
     { label: "Services", href: "#why" },
-    { label: "Department", href: "#departments" },
+    { label: "Test", href: "#departments" },
     { label: "Contact", href: "#footer" },
     { label: "Latest News", href: "#blog" },
   ],

@@ -7,7 +7,7 @@ import { DOCTORS } from "@/lib/data"
 import { slugify } from "@/lib/slug"
 import BookAppointmentButton from "./book-appointment-button"
 import { motion } from "framer-motion"
-import { cubicBezier } from "framer-motion";
+import { cubicBezier } from "framer-motion"
 import { doctorsData } from "@/lib/doctors"
 
 export default function Doctors() {
@@ -29,8 +29,8 @@ export default function Doctors() {
   return (
     <section id="doctors" className="mx-auto max-w-6xl px-4 py-16">
       <div className="text-center">
-        <SectionBadge>Meet Great Doctor’s</SectionBadge>
-        <SectionTitle className="mt-4">High Qualified Doctor’s</SectionTitle>
+        <SectionBadge>Meet Great Doctor's</SectionBadge>
+        <SectionTitle className="mt-4">High Qualified Doctor's</SectionTitle>
       </div>
 
       <motion.div
@@ -40,7 +40,7 @@ export default function Doctors() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
       >
-        {doctorsData.map((d: any) => (
+        {doctorsData.slice(0, 3).map((d) => (
           <motion.article
             key={d.name}
             variants={item}
@@ -48,7 +48,7 @@ export default function Doctors() {
           >
             <div className="aspect-[4/3]">
               <img
-                src={d.imgQuery}
+                src={(d.imgQuery)}
                 alt={`${d.name} placeholder`}
                 className="h-full w-full object-cover"
               />
@@ -65,16 +65,25 @@ export default function Doctors() {
                   className="sm:w-auto"
                 />
                 <Link
-                  href={`/doctors/${d.slug}`}
-                  className="inline-flex items-center justify-center rounded-md border border-stone-300 bg-white px-4 py-2 text-sm font-semibold text-stone-900 hover:bg-stone-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-700/40"
-                >
-                  View More
-                </Link>
+                   href={`/doctors/${d.slug}`}
+                   className="flex-1 bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg font-medium text-center transition-colors duration-200"
+                  >
+                  View Profile
+                  </Link>
               </div>
             </div>
           </motion.article>
         ))}
       </motion.div>
+
+      <div className="mt-8 text-center">
+        <Link
+          href="/doctors"
+          className="inline-flex items-center justify-center rounded-md bg-amber-600 px-6 py-3 text-sm font-semibold text-white hover:bg-amber-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-700/40"
+        >
+          View More Doctors
+        </Link>
+      </div>
     </section>
   )
 }

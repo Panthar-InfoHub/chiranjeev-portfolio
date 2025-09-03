@@ -2,12 +2,17 @@ import Link from "next/link"
 import { DOCTORS } from "@/lib/data"
 import { slugify } from "@/lib/slug"
 import { doctorsData } from "@/lib/doctors"
+import BookAppointmentButton from "@/components/book-appointment-button"
+import { MapPin, Clock, Star } from "lucide-react"
+import Image from "next/image"
+import { SectionBadge } from "@/components/section-badge"
+import { SectionTitle } from "@/components/section-title"
 
 type PageProps = { params: { slug: string } }
 
 export function generateStaticParams() {
   try {
-    return DOCTORS.map((d) => ({ slug: slugify(d.name) }))
+    return doctorsData.map((d) => ({ slug: slugify(d.name) }))
   } catch {
     return []
   }
@@ -15,7 +20,7 @@ export function generateStaticParams() {
 
 export default async function DoctorDetailPage({ params }: PageProps) {
   const { slug } = await params 
-  console .log(slug)
+  console.log(slug)
   const doc =
     doctorsData.find((d) => d.slug === slug) ||
     ({
@@ -53,7 +58,7 @@ export default async function DoctorDetailPage({ params }: PageProps) {
           {/* Placeholder image as requested */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={`/abstract-geometric-shapes.png?height=280&width=280&query=${encodeURIComponent(imgQuery)}`}
+            src={imgQuery}
             alt={`Photo of ${name}`}
             className="h-56 w-56 object-cover sm:h-60 sm:w-60"
           />
@@ -86,14 +91,12 @@ export default async function DoctorDetailPage({ params }: PageProps) {
           </ul>
 
           <div className="mt-5 flex flex-col gap-2 sm:flex-row">
+            <BookAppointmentButton
+              doctor={{ slug: slugify(doc.name), name: doc.name, department: doc.role }}
+              className="sm:w-auto"
+            />
             <Link
-              href="/#appointment"
-              className="inline-flex items-center justify-center rounded-md bg-amber-700 px-4 py-2 text-white transition-colors hover:bg-amber-800"
-            >
-              {"Book Appointment"}
-            </Link>
-            <Link
-              href="/#doctors"
+              href="/doctors"
               className="inline-flex items-center justify-center rounded-md border border-stone-300 px-4 py-2 text-stone-800 transition-colors hover:bg-stone-50"
             >
               {"View All Doctors"}

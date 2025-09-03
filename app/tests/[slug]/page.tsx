@@ -135,7 +135,7 @@ export default function TestDetailPage({ params }: PageProps) {
 
         <div className="overflow-hidden rounded-2xl border border-stone-200 bg-white">
           <img
-            src={`/abstract-geometric-shapes.png?height=280&width=280&query=${encodeURIComponent(test.iconQuery)}`}
+src={test.iconQuery}
             alt={`${test.name} medical test`}
             className="h-56 w-56 object-cover sm:h-60 sm:w-60"
           />

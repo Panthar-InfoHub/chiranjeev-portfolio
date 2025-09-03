@@ -157,3 +157,21 @@ export async function SearchPost(prevState: any, formData: FormData) {
     blogs: posts,
   };
 }
+
+export async function GetAllBlog() {
+  const post = await Prisma.post.findMany()
+  return{
+    posts: post
+  }
+}
+
+export async function GetBlogByTitle(slug: string) {
+  // Slugify logic as in CreatePost
+  
+
+  const post = await Prisma.post.findUnique({
+    where: { slug },
+  });
+
+  return post ;
+}

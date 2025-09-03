@@ -24,8 +24,9 @@ type AppointmentModalProps = {
   doctor?: DoctorLite | null
 }
 
-export function AppointmentModal({ open, onOpenChange, doctor }: AppointmentModalProps) {
+export function AppointmentModal({ open, onOpenChange,  doctor }: AppointmentModalProps) {
   const [type, setType] = React.useState<ConsultationType>("video")
+  console.log("doctor", doctor)
   const [gender, setGender] = React.useState<string>("male")
 
   React.useEffect(() => {
