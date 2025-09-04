@@ -213,7 +213,7 @@ export const NEWS_UPDATES = [
     date: "Dec 15, 2024",
     category: "Infrastructure",
     summary: "State-of-the-art cardiac surgery facilities now available with advanced robotic surgery capabilities.",
-    image: "modern hospital cardiac wing exterior",
+    image: "https://ca-times.brightspotcdn.com/dims4/default/b437d6a/2147483647/strip/true/crop/5400x3602+0+0/resize/1200x800!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fb7%2Fb6%2F7204757c4a53addf3f7f0a3ae90a%2F541874-sd-me-company-test-007.jpg",
   },
   {
     id: 2,
@@ -221,7 +221,7 @@ export const NEWS_UPDATES = [
     date: "Dec 10, 2024",
     category: "Services",
     summary: "Enhanced emergency response team with additional ambulances and specialized trauma care units.",
-    image: "emergency ambulance hospital entrance",
+    image: "https://ca-times.brightspotcdn.com/dims4/default/b437d6a/2147483647/strip/true/crop/5400x3602+0+0/resize/1200x800!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fb7%2Fb6%2F7204757c4a53addf3f7f0a3ae90a%2F541874-sd-me-company-test-007.jpg",
   },
   {
     id: 3,
@@ -230,7 +230,7 @@ export const NEWS_UPDATES = [
     category: "Technology",
     summary:
       "New digital consultation platform allows patients to connect with doctors remotely for non-emergency care.",
-    image: "doctor video call telemedicine consultation",
+    image: "https://ca-times.brightspotcdn.com/dims4/default/b437d6a/2147483647/strip/true/crop/5400x3602+0+0/resize/1200x800!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fb7%2Fb6%2F7204757c4a53addf3f7f0a3ae90a%2F541874-sd-me-company-test-007.jpg",
   },
   {
     id: 4,
@@ -238,6 +238,6 @@ export const NEWS_UPDATES = [
     date: "Nov 28, 2024",
     category: "Achievement",
     summary: "Our oncology department receives national accreditation for excellence in cancer care and research.",
-    image: "medical team cancer treatment facility",
+    image: "https://ca-times.brightspotcdn.com/dims4/default/b437d6a/2147483647/strip/true/crop/5400x3602+0+0/resize/1200x800!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fb7%2Fb6%2F7204757c4a53addf3f7f0a3ae90a%2F541874-sd-me-company-test-007.jpg",
   },
 ]

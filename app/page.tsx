@@ -63,9 +63,9 @@ export default function Page() {
           <Reveal delay={0.2}>
             <WhyChooseUs />
           </Reveal>
-          <Reveal delay={0.8} y={20}>
+          {/* <Reveal delay={0.8} y={20}>
             <AppointmentCard />
-          </Reveal>
+          </Reveal> */}
           <Footer />
           <BackToTop />
         </>

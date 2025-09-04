@@ -35,7 +35,7 @@ export default function NewsUpdates() {
           >
             <div className="aspect-video overflow-hidden">
               <img
-                src={`/abstract-geometric-shapes.png?height=240&width=400&query=${news.image}`}
+                src={news.image}
                 alt={news.title}
                 className="h-full w-full object-cover transition-transform hover:scale-105"
               />

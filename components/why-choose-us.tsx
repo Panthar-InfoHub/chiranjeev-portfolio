@@ -41,19 +41,19 @@ export default function WhyChooseUs() {
         >
           <div className="col-span-2">
             <img
-              src={"/placeholder.svg?height=560&width=560&query=nurse%20portrait%20in%20hospital"}
+              src={"https://ca-times.brightspotcdn.com/dims4/default/b437d6a/2147483647/strip/true/crop/5400x3602+0+0/resize/1200x800!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fb7%2Fb6%2F7204757c4a53addf3f7f0a3ae90a%2F541874-sd-me-company-test-007.jpg"}
               alt="Nurse portrait placeholder"
               className="h-full w-full rounded-full border border-stone-200 object-cover"
             />
           </div>
           <div className="space-y-4">
             <img
-              src={"/placeholder.svg?height=160&width=320&query=stethoscope%20closeup"}
+              src={"https://ca-times.brightspotcdn.com/dims4/default/b437d6a/2147483647/strip/true/crop/5400x3602+0+0/resize/1200x800!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fb7%2Fb6%2F7204757c4a53addf3f7f0a3ae90a%2F541874-sd-me-company-test-007.jpg"}
               alt="Stethoscope placeholder"
               className="h-40 w-full rounded-[2rem] border border-stone-200 object-cover"
             />
             <img
-              src={"/placeholder.svg?height=320&width=320&query=doctor%20portrait%20smiling"}
+              src={"https://ca-times.brightspotcdn.com/dims4/default/b437d6a/2147483647/strip/true/crop/5400x3602+0+0/resize/1200x800!/format/webp/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fb7%2Fb6%2F7204757c4a53addf3f7f0a3ae90a%2F541874-sd-me-company-test-007.jpg  "}
               alt="Doctor portrait placeholder"
               className="h-72 w-full rounded-[2rem] border border-stone-200 object-cover"
             />

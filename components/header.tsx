@@ -8,6 +8,7 @@ import { Search, X, User, Stethoscope } from "lucide-react"
 import { useState, useEffect } from "react"
 import { createPortal } from "react-dom"
 import BookingModal from "./bookingModal"
+import { doctorsData } from "@/lib/doctors"
 
 export default function Header() {
   const isMobile = useIsMobile()
@@ -20,25 +21,6 @@ export default function Header() {
   }, [])
 
   if (isMobile) return null
-
-  const doctors = [
-    { name: "Dr. Rajesh Kumar", specialty: "Cardiologist" },
-    { name: "Dr. Priya Sharma", specialty: "Neurologist" },
-    { name: "Dr. Amit Patel", specialty: "Orthopedic Surgeon" },
-    { name: "Dr. Sunita Verma", specialty: "Pediatrician" },
-    { name: "Dr. Vikram Singh", specialty: "Dermatologist" },
-    { name: "Dr. Kavita Rao", specialty: "Gynecologist" },
-    { name: "Dr. Ravi Gupta", specialty: "ENT Specialist" },
-    { name: "Dr. Meera Joshi", specialty: "Ophthalmologist" },
-  ]
-
-  const popularTests = [
-    ...TESTS,
-    { name: "Thyroid Function Test", slug: "thyroid-function-test" },
-    { name: "Diabetes Panel", slug: "diabetes-panel" },
-    { name: "Lipid Profile", slug: "lipid-profile" },
-    { name: "Liver Function Test", slug: "liver-function-test" },
-  ]
 
   const SearchModal = () => (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-sm">
@@ -77,13 +59,13 @@ export default function Header() {
                 <h3 className="text-lg font-semibold text-gray-800">Our Doctors</h3>
               </div>
               <div className="space-y-2">
-                {doctors.map((doctor, index) => (
+                {doctorsData.map((doctor, index) => (
                   <button
                     key={index}
                     className="w-full text-left p-3 rounded-lg hover:bg-amber-50 hover:text-amber-700 transition-colors border border-gray-100"
                   >
                     <div className="font-medium">{doctor.name}</div>
-                    <div className="text-sm text-gray-600">{doctor.specialty}</div>
+                    <div className="text-sm text-gray-600">{doctor.role}</div>
                   </button>
                 ))}
               </div>
@@ -95,7 +77,7 @@ export default function Header() {
                 <h3 className="text-lg font-semibold text-gray-800">Popular Tests</h3>
               </div>
               <div className="space-y-2">
-                {popularTests.map((test, index) => (
+                {TESTS.map((test, index) => (
                   <Link
                     key={index}
                     href={`/tests/${test.slug}`}
