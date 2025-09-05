@@ -1,7 +1,6 @@
 "use client"
 import { useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { TEST_BASE_PRICES } from "@/lib/pricing"
 
 type Props = {
   open: boolean
@@ -11,8 +10,6 @@ type Props = {
 }
 
 export default function TestAppointmentModal({ open, onClose, testSlug, testTitle }: Props) {
-  const price = TEST_BASE_PRICES[testSlug] ?? 0
-
   useEffect(() => {
     const onEsc = (e: KeyboardEvent) => e.key === "Escape" && onClose()
     document.addEventListener("keydown", onEsc)
@@ -70,7 +67,7 @@ export default function TestAppointmentModal({ open, onClose, testSlug, testTitl
                   <input
                     inputMode="tel"
                     className="h-10 rounded-md border border-stone-300 px-3 outline-none focus:border-amber-700"
-                    placeholder="e.g.  +91 8827190251"
+                    placeholder="e.g. +1 555 123 4567"
                   />
                 </label>
                 <label className="flex flex-col gap-1">
@@ -79,6 +76,8 @@ export default function TestAppointmentModal({ open, onClose, testSlug, testTitl
                     <option value="">Select</option>
                     <option>Female</option>
                     <option>Male</option>
+                    <option>Non-binary</option>
+                    <option>Prefer not to say</option>
                   </select>
                 </label>
               </div>
@@ -99,15 +98,13 @@ export default function TestAppointmentModal({ open, onClose, testSlug, testTitl
                   />
                 </label>
               </div>
-              <div className="flex items-center justify-between gap-4 pt-1">
-                <p className="text-stone-700">
-                  Total: <span className="font-semibold text-amber-800">Rs.{price}</span>
-                </p>
+
+              <div className="flex justify-end pt-1">
                 <button
-                  type="button"
-                  className="inline-flex h-10 items-center justify-center rounded-md bg-amber-700 px-4 text-white hover:bg-amber-800"
+                  type="submit"
+                  className="inline-flex h-10 items-center justify-center rounded-md bg-amber-700 px-6 text-white hover:bg-amber-800"
                 >
-                  Pay Now — Rs.{price}
+                  Book Appointment
                 </button>
               </div>
             </form>

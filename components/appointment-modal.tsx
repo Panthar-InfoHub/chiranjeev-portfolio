@@ -5,12 +5,12 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select"
 import { Button } from "@/components/ui/button"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { getConsultationPrice, type ConsultationType } from "@/lib/pricing"
 import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
 import { cubicBezier } from "framer-motion";
 import { easeOut, easeInOut } from "framer-motion";
-
 
 type DoctorLite = {
   slug?: string
@@ -24,23 +24,24 @@ type AppointmentModalProps = {
   doctor?: DoctorLite | null
 }
 
-export function AppointmentModal({ open, onOpenChange,  doctor }: AppointmentModalProps) {
+export function AppointmentModal({ open, onOpenChange, doctor }: AppointmentModalProps) {
   const [type, setType] = React.useState<ConsultationType>("video")
-  console.log("doctor", doctor)
   const [gender, setGender] = React.useState<string>("male")
+  const [isEmergency, setIsEmergency] = React.useState<boolean>(false)
+  const [selectedDate, setSelectedDate] = React.useState<string>("")
 
   React.useEffect(() => {
-    // Reset to defaults when switching doctors
     setType("video")
     setGender("male")
+    setIsEmergency(false)
+    setSelectedDate("")
   }, [doctor?.slug])
 
-  const price = getConsultationPrice(doctor?.slug, type)
+  const price = getConsultationPrice(doctor?.slug, type, isEmergency, selectedDate)
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     const formData = new FormData(e.currentTarget)
-    // Replace with real payment integration
     console.log("[v0] Appointment payload:", Object.fromEntries(formData.entries()), {
       doctor: doctor?.slug,
       consultationType: type,
@@ -104,12 +105,19 @@ export function AppointmentModal({ open, onOpenChange,  doctor }: AppointmentMod
 
               <motion.div className="space-y-1.5 md:col-span-2" variants={item}>
                 <Label htmlFor="mobile">Mobile Number</Label>
-                <Input id="mobile" name="mobile" type="tel" placeholder="e.g.,` +91 8827190251`" required />
+                <Input id="mobile" name="mobile" type="tel" placeholder="e.g., +1 555 000 0000" required />
               </motion.div>
 
               <motion.div className="space-y-1.5" variants={item}>
                 <Label htmlFor="date">Date</Label>
-                <Input id="date" name="date" type="date" required />
+                <Input
+                  id="date"
+                  name="date"
+                  type="date"
+                  value={selectedDate}
+                  onChange={(e) => setSelectedDate(e.target.value)}
+                  required
+                />
               </motion.div>
 
               <motion.div className="space-y-1.5" variants={item}>
@@ -126,23 +134,44 @@ export function AppointmentModal({ open, onOpenChange,  doctor }: AppointmentMod
                   <SelectContent>
                     <SelectItem value="male">Male</SelectItem>
                     <SelectItem value="female">Female</SelectItem>
+                    <SelectItem value="other">Other</SelectItem>
+                    <SelectItem value="prefer-not-to-say">Prefer not to say</SelectItem>
                   </SelectContent>
                 </Select>
                 <input type="hidden" name="gender" value={gender} />
               </motion.div>
 
               <motion.div className="space-y-1.5" variants={item}>
-                <Label>Consultation</Label>
+                <Label>Consultation Type</Label>
                 <Select defaultValue={type} onValueChange={(v) => setType(v as ConsultationType)} name="consultation">
                   <SelectTrigger>
                     <SelectValue placeholder="Select type" />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="video">Video Consultation</SelectItem>
-                    <SelectItem value="physical">Physical Consultation</SelectItem>
+                    <SelectItem value="physical">Physical Visit</SelectItem>
                   </SelectContent>
                 </Select>
                 <input type="hidden" name="consultation" value={type} />
+              </motion.div>
+
+              <motion.div className="space-y-1.5 md:col-span-2" variants={item}>
+                <Label>Emergency Consultation</Label>
+                <RadioGroup
+                  value={isEmergency ? "yes" : "no"}
+                  onValueChange={(value) => setIsEmergency(value === "yes")}
+                  className="flex gap-6"
+                >
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="no" id="emergency-no" />
+                    <Label htmlFor="emergency-no">No</Label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="yes" id="emergency-yes" />
+                    <Label htmlFor="emergency-yes">Yes (+Rs. 300 emergency fee)</Label>
+                  </div>
+                </RadioGroup>
+                <input type="hidden" name="isEmergency" value={isEmergency.toString()} />
               </motion.div>
             </motion.div>
 
@@ -152,11 +181,23 @@ export function AppointmentModal({ open, onOpenChange,  doctor }: AppointmentMod
               initial="hidden"
               animate="visible"
             >
-              <p className="text-sm text-stone-600">
-                Department: <span className="font-medium text-stone-900">{doctor?.department || "General"}</span>
-              </p>
+              <div className="text-sm text-stone-600">
+                <p>
+                  Department: <span className="font-medium text-stone-900">{doctor?.department || "General"}</span>
+                </p>
+                {(isEmergency || (selectedDate && new Date(selectedDate).getDay() === 0)) && (
+                  <p className="text-amber-600 font-medium mt-1">
+                    {isEmergency && selectedDate && new Date(selectedDate).getDay() === 0
+                      ? "Emergency + Sunday consultation"
+                      : isEmergency
+                        ? "Emergency consultation"
+                        : "Sunday consultation"}{" "}
+                    - Rs. 800
+                  </p>
+                )}
+              </div>
               <Button type="submit" className={cn("bg-amber-700 hover:bg-amber-800 text-white")}>
-                {`Pay Now — Rs.${price}`}
+                {`Pay Now — Rs. ${price}`}
               </Button>
             </motion.div>
           </form>

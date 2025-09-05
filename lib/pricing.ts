@@ -1,25 +1,22 @@
 export type ConsultationType = "video" | "physical"
 
-type DoctorPricing = {
-  physical: number
-  video: number
-}
+const BASE_CONSULTATION_FEE = 500
+const EMERGENCY_CONSULTATION_FEE = 800
 
 // Keys should match doctor slugs, e.g. from slugify(name)
-const PRICING: Record<string, DoctorPricing> = {
-  "jitendra-kumar-pal": { physical: 500, video: 500 },
-  "ruby-gupta": { physical: 500, video: 500 },
-  "abhay-gupta": { physical: 500, video: 500 },
-  "Stayendra-rajpoot": { physical: 500, video: 500 },
-  "deepak-singh": { physical: 500, video: 500 },
-  "sanjay-tripathi": { physical: 500, video: 500 },
-  "apoorva-tripathi": { physical: 500, video: 500 },
-  "vashika-saxsena": { physical: 500, video: 500 },
-  "rashi-rai": { physical: 500, video: 500 },
+const PRICING: Record<string, { physical: number; video: number }> = {
+    "jitendra-kumar-pal": { physical: BASE_CONSULTATION_FEE, video: BASE_CONSULTATION_FEE },
+  "ruby-gupta": { physical: BASE_CONSULTATION_FEE, video: BASE_CONSULTATION_FEE },
+  "abhay-gupta": { physical: BASE_CONSULTATION_FEE, video: BASE_CONSULTATION_FEE },
+  "Stayendra-rajpoot": { physical: BASE_CONSULTATION_FEE, video: BASE_CONSULTATION_FEE },
+  "deepak-singh": { physical: BASE_CONSULTATION_FEE, video: BASE_CONSULTATION_FEE },
+  "sanjay-tripathi": { physical: BASE_CONSULTATION_FEE, video: BASE_CONSULTATION_FEE },
+  "apoorva-tripathi": { physical: BASE_CONSULTATION_FEE, video: BASE_CONSULTATION_FEE },
+  "vashika-saxsena": { physical: BASE_CONSULTATION_FEE, video: BASE_CONSULTATION_FEE },
+  "rashi-rai": { physical: BASE_CONSULTATION_FEE, video: BASE_CONSULTATION_FEE },
   
 }
-
-const DEFAULT_PRICING: DoctorPricing = { physical: 130, video: 90 }
+const DEFAULT_PRICING = { physical: BASE_CONSULTATION_FEE, video: BASE_CONSULTATION_FEE }
 
 export const TEST_BASE_PRICES: Record<string, number> = {
   "blood-work": 45,
@@ -32,7 +29,21 @@ export const TEST_BASE_PRICES: Record<string, number> = {
   ecg: 85,
 }
 
-export function getConsultationPrice(doctorSlug: string | undefined, type: ConsultationType) {
-  const p = (doctorSlug && PRICING[doctorSlug]) || DEFAULT_PRICING
-  return type === "physical" ? p.physical : p.video
+export function getConsultationPrice(
+  doctorSlug: string | undefined,
+  type: ConsultationType,
+  isEmergency = false,
+  selectedDate?: string,
+) {
+  // Check if selected date is Sunday
+  const isSunday = selectedDate ? new Date(selectedDate).getDay() === 0 : false
+
+  // Return emergency fee if it's emergency or Sunday
+  if (isEmergency || isSunday) {
+    return EMERGENCY_CONSULTATION_FEE
+  }
+
+  // Return base fee for all consultations (video and physical are same price)
+  return BASE_CONSULTATION_FEE
 }
+
