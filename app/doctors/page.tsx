@@ -33,9 +33,9 @@ export default function DoctorsPage() {
               >
                 <div className="relative h-64 overflow-hidden">
                   <img
-                    src={d.imgQuery || "/placeholder.svg"}
+                    src={d.photo || "/placeholder.svg"}
                     alt={d.name}
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-130 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1">
                     <Star className="w-4 h-4 fill-amber-400 text-amber-400" />

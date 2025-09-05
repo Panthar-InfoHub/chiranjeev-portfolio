@@ -48,9 +48,9 @@ export default function Doctors() {
           >
             <div className="aspect-[4/3]">
               <img
-                src={(d.imgQuery)}
+                src={(d.photo)}
                 alt={`${d.name} placeholder`}
-                className="h-full w-full object-cover"
+                className="h-100 w-full object-cover"
               />
             </div>
             <div className="space-y-1 p-6">

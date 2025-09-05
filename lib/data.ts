@@ -96,7 +96,7 @@ export const TESTIMONIALS: Testimonial[] = [
     date: "Aug 22, 2025",
     summary:
       "Patient made steady neurological improvements after timely thrombolysis and rehabilitation. Early intervention and consistent follow-up were key.",
-    youtubeId: "dQw4w9WgXcQ", // Placeholder YouTube video ID
+    youtubeId: "c9emwrhvdnc", // Placeholder YouTube video ID
   },
   {
     slug: "knee-replacement-success",
@@ -107,7 +107,7 @@ export const TESTIMONIALS: Testimonial[] = [
     date: "Jun 10, 2025",
     summary:
       "Minimally invasive procedure with rapid post-op mobilization. The patient resumed daily walks within three weeks.",
-    youtubeId: "9bZkp7q19f0", // Placeholder YouTube video ID
+    youtubeId: "ASOsI1g8lvc", // Placeholder YouTube video ID
   },
   {
     slug: "cardiac-bypass-recovery",
@@ -118,7 +118,7 @@ export const TESTIMONIALS: Testimonial[] = [
     date: "May 02, 2025",
     summary:
       "Successful CABG with excellent graft flow. Lifestyle counseling and monitored cardio rehab supported a strong recovery.",
-    youtubeId: "ScMzIvxBSi4", // Placeholder YouTube video ID
+    youtubeId: "98Muznc3m-g", // Placeholder YouTube video ID
   },
   {
     slug: "spine-surgery-rehab",
@@ -127,9 +127,8 @@ export const TESTIMONIALS: Testimonial[] = [
     hospital: "Spine & Neuro Clinic",
     location: "Bengaluru",
     date: "Apr 18, 2025",
-    summary:
-      "Decompression and stabilization eliminated radicular pain. Physiotherapy improved core strength and posture.",
-    youtubeId: "kJQP7kiw5Fk", // Placeholder YouTube video ID
+    summary:"Decompression and stabilization eliminated radicular pain. Physiotherapy improved core strength and posture.",
+    youtubeId: "ASOsI1g8lvc", // Placeholder YouTube video ID
   },
   {
     slug: "oncology-remission",
@@ -140,7 +139,7 @@ export const TESTIMONIALS: Testimonial[] = [
     date: "Mar 05, 2025",
     summary:
       "Personalized chemo protocol with supportive care minimized side effects. PET-CT confirmed remission at 6 months.",
-    youtubeId: "L_jWHffIx5E", // Placeholder YouTube video ID
+    youtubeId: "ASOsI1g8lvc", // Placeholder YouTube video ID
   },
   {
     slug: "hip-replacement-comeback",
@@ -151,7 +150,7 @@ export const TESTIMONIALS: Testimonial[] = [
     date: "Jan 22, 2025",
     summary:
       "Uncemented implant with precise alignment. Gradual strengthening program returned full mobility for daily life.",
-    youtubeId: "fJ9rUzIMcZQ", // Placeholder YouTube video ID
+    youtubeId: "ASOsI1g8lvc", // Placeholder YouTube video ID
   },
 ]
 

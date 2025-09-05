@@ -35,6 +35,7 @@ export default async function DoctorDetailPage({ params }: PageProps) {
   const department = doc.role || "General Medicine"
   const experienceYears = typeof doc.experienceYears === "number" ? doc.experienceYears : 8
   const imgQuery = doc.imgQuery || "doctor portrait on neutral background"
+  const Photo = doc.photo || "/placeholder.svg"
   const about = doc.about || "Experienced medical professional dedicated to patient care and well-being."
 
   return (
@@ -58,7 +59,7 @@ export default async function DoctorDetailPage({ params }: PageProps) {
           {/* Placeholder image as requested */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={imgQuery}
+            src={Photo}
             alt={`Photo of ${name}`}
             className="h-56 w-56 object-cover sm:h-60 sm:w-60"
           />
@@ -70,9 +71,12 @@ export default async function DoctorDetailPage({ params }: PageProps) {
           <h2 className="mb-3 text-xl font-semibold text-stone-900">About the Doctor</h2>
           <p className="text-stone-700 leading-relaxed">
             {
-              doc.about
+              doc.bio
             }
-            {"patient care philosophy details. Replace this placeholder text with real content later."}
+            <br />
+
+            <br />
+            {doc.about}
           </p>
         </div>
 
